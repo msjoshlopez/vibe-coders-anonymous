@@ -647,6 +647,72 @@
 		</div>
 	</section>
 
+	<!-- Funny Section - Things You'll Never Hear a Vibe Coder Say -->
+	<section id="funny" class="py-32 px-6 bg-[#0d1117] relative overflow-hidden">
+		<!-- Background effects -->
+		<div
+			class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,92,246,0.06)_0%,_transparent_50%)]"
+		></div>
+
+		<div
+			class="max-w-4xl mx-auto relative z-10 {visibleSections.has('funny')
+				? 'animate-fade-in-up'
+				: 'opacity-0'}"
+		>
+			<div class="text-center mb-16">
+				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#a855f7] to-[#7c3aed] mb-6">
+					<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+						/>
+					</svg>
+				</div>
+				<h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
+					Things You'll Never Hear a Vibe Coder Say
+				</h2>
+				<p class="text-[#8b949e]">If you catch yourself saying any of these, you might be recovering</p>
+			</div>
+
+			<div class="grid gap-4 sm:grid-cols-2">
+				{#each [
+					'"Let me read the documentation first."',
+					'"I should understand this algorithm before using it."',
+					'"Actually, I think I can write this function myself."',
+					'"No, I don\'t need AI for this simple task."',
+					'"Let me debug this by reading the error message carefully."',
+					'"I prefer writing tests over shipping features."',
+					'"This code is too complex, let me simplify it."',
+					'"I\'ll manually type this instead of copy-pasting."',
+					'"Let me review the dependencies before installing."',
+					'"I know exactly what this code does."'
+				] as quote, i}
+					<div
+						class="group p-6 rounded-xl bg-[#161b22] border border-[#30363d] hover:border-[#a855f7]/50 transition-all duration-300 hover:-translate-y-1"
+						style="transition-delay: {i * 50}ms"
+					>
+						<div class="flex items-start gap-4">
+							<div
+								class="flex-shrink-0 w-8 h-8 rounded-full bg-[#a855f7]/10 flex items-center justify-center group-hover:bg-[#a855f7]/20 transition-colors"
+							>
+								<span class="text-[#a855f7] font-bold text-sm">{i + 1}</span>
+							</div>
+							<p class="text-[#c9d1d9] font-medium leading-relaxed">{quote}</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+
+			<div class="mt-12 text-center">
+				<p class="text-[#8b949e] text-sm italic">
+					* If you've said any of these unironically, congratulations — you're already in recovery! 🎉
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<!-- Serenity Prayer - Dramatic -->
 	<section id="prayer" class="py-40 px-6 bg-[#161b22] relative overflow-hidden">
 		<!-- Background effects -->
