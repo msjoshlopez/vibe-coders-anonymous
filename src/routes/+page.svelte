@@ -377,7 +377,7 @@
 				</div>
 
 				<img
-					src="/images/regular-logo.png"
+					src="/regular-logo.png"
 					alt="Background"
 					class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
 				/>
