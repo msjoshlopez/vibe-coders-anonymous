@@ -38,6 +38,14 @@
 	--radius-full: 9999px;
 }
 
+@utility card-shadow {
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+@utility bg-gradient-subtle {
+	background: linear-gradient(135deg, var(--card) 0%, #1a1a2e 100%);
+}
+
 /* Register colors with Tailwind */
 @theme inline {
 	--color-background: var(--background);

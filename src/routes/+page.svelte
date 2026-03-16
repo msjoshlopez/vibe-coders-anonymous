@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly, fade, scale } from 'svelte/transition';
+	import PanicButton from '$lib/components/PanicButton.svelte';
+	import CommitRoulette from '$lib/components/CommitRoulette.svelte';
+	import WeightTracker from '$lib/components/WeightTracker.svelte';
+	import RubberDuck from '$lib/components/RubberDuck.svelte';
 
 	interface Step {
 		number: number;
@@ -258,7 +262,9 @@
 									class="w-full h-full rounded-full bg-gradient-to-br from-amber-600 via-amber-500 to-amber-700 flex items-center justify-center border-4 border-amber-400/60 shadow-inner"
 								>
 									<div class="text-center">
-										<div class="text-4xl sm:text-5xl font-bold text-amber-100 font-display drop-shadow-lg">
+										<div
+											class="text-4xl sm:text-5xl font-bold text-amber-100 font-display drop-shadow-lg"
+										>
 											{daysSober}
 										</div>
 										<div class="text-[10px] uppercase tracking-wider text-amber-200/90 font-medium">
@@ -348,11 +354,15 @@
 				</div>
 			{/if}
 		</div>
-
 	</header>
 
 	<!-- The Problem - Terminal style -->
 	<section id="confession" class="py-32 px-6 bg-gradient-to-b from-[#0d1117] to-[#161b22]">
+		<img
+			src="https://placehold.co/600x400"
+			alt="Background"
+			class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+		/>
 		<div
 			class="max-w-3xl mx-auto {visibleSections.has('confession')
 				? 'animate-fade-in-up'
@@ -660,7 +670,9 @@
 				: 'opacity-0'}"
 		>
 			<div class="text-center mb-16">
-				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#a855f7] to-[#7c3aed] mb-6">
+				<div
+					class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#a855f7] to-[#7c3aed] mb-6"
+				>
 					<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path
 							stroke-linecap="round"
@@ -673,22 +685,13 @@
 				<h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
 					Things You'll Never Hear a Vibe Coder Say
 				</h2>
-				<p class="text-[#8b949e]">If you catch yourself saying any of these, you might be recovering</p>
+				<p class="text-[#8b949e]">
+					If you catch yourself saying any of these, you might be recovering
+				</p>
 			</div>
 
 			<div class="grid gap-4 sm:grid-cols-2">
-				{#each [
-					'"Let me read the documentation first."',
-					'"I should understand this algorithm before using it."',
-					'"Actually, I think I can write this function myself."',
-					'"No, I don\'t need AI for this simple task."',
-					'"Let me debug this by reading the error message carefully."',
-					'"I prefer writing tests over shipping features."',
-					'"This code is too complex, let me simplify it."',
-					'"I\'ll manually type this instead of copy-pasting."',
-					'"Let me review the dependencies before installing."',
-					'"I know exactly what this code does."'
-				] as quote, i}
+				{#each ['"Let me read the documentation first."', '"I should understand this algorithm before using it."', '"Actually, I think I can write this function myself."', '"No, I don\'t need AI for this simple task."', '"Let me debug this by reading the error message carefully."', '"I prefer writing tests over shipping features."', '"This code is too complex, let me simplify it."', '"I\'ll manually type this instead of copy-pasting."', '"Let me review the dependencies before installing."', '"I know exactly what this code does."'] as quote, i}
 					<div
 						class="group p-6 rounded-xl bg-[#161b22] border border-[#30363d] hover:border-[#a855f7]/50 transition-all duration-300 hover:-translate-y-1"
 						style="transition-delay: {i * 50}ms"
@@ -707,7 +710,8 @@
 
 			<div class="mt-12 text-center">
 				<p class="text-[#8b949e] text-sm italic">
-					* If you've said any of these unironically, congratulations — you're already in recovery! 🎉
+					* If you've said any of these unironically, congratulations — you're already in recovery!
+					🎉
 				</p>
 			</div>
 		</div>
@@ -772,6 +776,17 @@
 		</div>
 	</section>
 
+	<!-- Rubber Duck Section -->
+	<section id="rubber-duck" class="py-32 px-6 bg-gradient-to-b from-[#161b22] to-[#0d1117]">
+		<div
+			class="max-w-4xl mx-auto {visibleSections.has('rubber-duck')
+				? 'animate-fade-in-up'
+				: 'opacity-0'}"
+		>
+			<RubberDuck />
+		</div>
+	</section>
+
 	<!-- Resources -->
 	<section id="resources" class="py-32 px-6">
 		<div
@@ -787,82 +802,23 @@
 			</div>
 
 			<div class="grid gap-6 sm:grid-cols-3">
-				<div
-					class="group p-8 rounded-2xl bg-[#161b22] border border-[#30363d] hover:border-[#58a6ff]/50 transition-all duration-300 hover:-translate-y-1"
-				>
-					<div
-						class="w-14 h-14 rounded-2xl bg-[#58a6ff]/10 flex items-center justify-center mb-6 group-hover:bg-[#58a6ff]/20 group-hover:scale-110 transition-all duration-300"
-					>
-						<svg
-							class="w-7 h-7 text-[#58a6ff]"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-							/>
-						</svg>
-					</div>
-					<h3 class="font-bold text-white text-lg mb-3">Beginner's Guide</h3>
-					<p class="text-[#8b949e] leading-relaxed">
-						Learn what a "for loop" actually does. Warning: May cause existential crisis.
-					</p>
+				<!-- Commit Roulette -->
+				<div class="sm:col-span-1">
+					<CommitRoulette />
 				</div>
 
-				<div
-					class="group p-8 rounded-2xl bg-[#161b22] border border-[#30363d] hover:border-[#7ee787]/50 transition-all duration-300 hover:-translate-y-1"
-				>
-					<div
-						class="w-14 h-14 rounded-2xl bg-[#7ee787]/10 flex items-center justify-center mb-6 group-hover:bg-[#7ee787]/20 group-hover:scale-110 transition-all duration-300"
-					>
-						<svg
-							class="w-7 h-7 text-[#7ee787]"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-							/>
-						</svg>
-					</div>
-					<h3 class="font-bold text-white text-lg mb-3">Sponsor Program</h3>
-					<p class="text-[#8b949e] leading-relaxed">
-						Get paired with a developer who actually reads their own code.
-					</p>
+				<!-- Weight Tracker -->
+				<div class="sm:col-span-1">
+					<WeightTracker />
 				</div>
 
-				<div
-					class="group p-8 rounded-2xl bg-[#161b22] border border-[#30363d] hover:border-[#f97316]/50 transition-all duration-300 hover:-translate-y-1"
-				>
+				<!-- Panic Button -->
+				<div class="sm:col-span-1 flex flex-col">
 					<div
-						class="w-14 h-14 rounded-2xl bg-[#f97316]/10 flex items-center justify-center mb-6 group-hover:bg-[#f97316]/20 group-hover:scale-110 transition-all duration-300"
+						class="flex-1 flex items-center justify-center p-6 rounded-2xl bg-gradient-to-br from-[#161b22] to-[#0d1117] border border-[#30363d]"
 					>
-						<svg
-							class="w-7 h-7 text-[#f97316]"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-							/>
-						</svg>
+						<PanicButton />
 					</div>
-					<h3 class="font-bold text-white text-lg mb-3">24/7 Hotline</h3>
-					<p class="text-[#8b949e] leading-relaxed">
-						Call before you paste that entire stack trace into Claude.
-					</p>
 				</div>
 			</div>
 		</div>
@@ -892,11 +848,31 @@
 						Join thousands of developers who are learning to code again—this time, with
 						understanding.
 					</p>
-					<button
-						class="px-10 py-5 bg-[#0d1117] text-white font-bold text-lg rounded-xl hover:bg-[#161b22] transition-all duration-300 shadow-2xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:scale-105"
-					>
-						Join a Meeting
-					</button>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+						<button
+							class="px-10 py-5 bg-[#0d1117] text-white font-bold text-lg rounded-xl hover:bg-[#161b22] transition-all duration-300 shadow-2xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:scale-105"
+						>
+							Join a Meeting
+						</button>
+						<a
+							href="/quiz"
+							class="px-10 py-5 border-2 border-white/70 text-white font-bold text-lg rounded-xl hover:bg-white/10 hover:border-white transition-all duration-300 hover:scale-105"
+						>
+							Take the Diagnostic Test →
+						</a>
+						<a
+							href="/game"
+							class="px-10 py-5 border-2 border-white/40 text-white/90 font-bold text-lg rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300 hover:scale-105"
+						>
+							60 Seconds Sober 🎮
+						</a>
+						<a
+							href="/confessions"
+							class="px-10 py-5 border-2 border-white/40 text-white/90 font-bold text-lg rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300 hover:scale-105"
+						>
+							The Confession Booth 🕯️
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import Navbar from '$lib/components/Navbar.svelte';
 
 	let { children } = $props();
 </script>
@@ -19,5 +20,6 @@
 </svelte:head>
 
 <div class="font-sans antialiased">
+	<Navbar />
 	{@render children()}
 </div>

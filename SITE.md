@@ -108,15 +108,18 @@ GitHub-dark inspired aesthetic with dramatic lighting and polish:
 
 ### 7. Recovery Resources
 
-- 3-column icon cards
-- Color-coded hover effects (blue, green, orange)
-- Scale animation on hover
+- 3-column interactive tool cards:
+  - **CommitRoulette**: Generates funny "vibe-based" commit messages like "I have no idea what this does, but the tests passed"
+  - **WeightTracker**: Scans node_modules and reveals your "emotional weight" (e.g., "Equivalent to 12 years of questioning your career choice")
+  - **PanicButton**: Emergency detox button — opens Haskell, Rust, or COBOL docs in a new tab and shows a "you don't need the prompt" overlay
 
 ### 8. CTA Section
 
 - Orange gradient with dot pattern overlay
 - Large headline with line break
 - Prominent "Join a Meeting" button
+- Link to the Diagnostic Quiz (`/quiz`)
+- Link to the 60 Seconds Sober game (`/game`)
 
 ### 9. Footer
 
@@ -142,11 +145,29 @@ GitHub-dark inspired aesthetic with dramatic lighting and polish:
 - **Scroll detection**: IntersectionObserver
 - **Fonts**: Google Fonts (Bitter, Source Sans 3)
 
+## Pages
+
+- **Homepage** (`/`) — The main recovery landing page with all sections
+- **Diagnostic Quiz** (`/quiz`) — 10-question multiple choice test, calculates your "vibe coder" score and tier. Each answer has a unique snarky reaction that appears before advancing. Score is hidden until the end. Results include a 2-paragraph diagnosis, an "Rx" prescription, severity spectrum bar, and a "Share Diagnosis" clipboard button.
+- **60 Seconds Sober** (`/game`) — Survival game: developer crisis scenarios appear one at a time, click the sober response to earn points. Click "Ask Claude" even once = instant game over. 15 randomized scenarios, streak multipliers, 60-second countdown timer.
+- **The Confession Booth** (`/confessions`) — Anonymous confession wall. 14 pre-written funny confessions displayed as rotated "pinned note" cards in a masonry grid. Each card has a category tag (Prompt Abuse, Copy-Paste Crime, Identity Crisis, Dependency, Deploy Recklessness), days-sober badge (color-coded red/yellow/green), and a "Me Too" counter button. Filter by category. Submit your own confession — it gets a randomly generated anonymous username and appears at the top of the wall. Absolution toast notification on submit.
+
+## Components
+
+- **Navbar** (`src/lib/components/Navbar.svelte`) - Fixed top navigation bar with links to all 4 pages. Highlights the active page in orange. Collapses into a hamburger menu on mobile. Logo links back to the homepage.
+- **CommitRoulette** (`src/lib/components/CommitRoulette.svelte`) - Generates random commit messages like "Replaced logic with vibes". Shows message in terminal-style display.
+- **WeightTracker** (`src/lib/components/WeightTracker.svelte`) - Simulates scanning node_modules, shows "emotional weight" in GB with humorous equivalents. Red shake animation if over 1GB.
+- **PanicButton** (`src/lib/components/PanicButton.svelte`) - Emergency button that opens documentation (Haskell, Rust, COBOL) and shows overlay with motivational message.
+- **RubberDuck** (`src/lib/components/RubberDuck.svelte`) - Interactive rubber duck with debugging tips.
+
 ## Key Files
 
 - `src/app.css` - Base styles and design tokens
-- `src/routes/+layout.svelte` - Layout with fonts
+- `src/routes/+layout.svelte` - Layout with fonts and Navbar
 - `src/routes/+page.svelte` - Complete interactive homepage
+- `src/routes/quiz/+page.svelte` - Diagnostic quiz page
+- `src/routes/game/+page.svelte` - 60 Seconds Sober game page
+- `src/routes/confessions/+page.svelte` - The Confession Booth page
 
 ## Customization
 
