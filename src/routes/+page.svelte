@@ -871,7 +871,7 @@
 							href="/confessions"
 							class="px-10 py-5 border-2 border-white/40 text-white/90 font-bold text-lg rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300 hover:scale-105"
 						>
-							The Confession Booth 🕯️
+							The Confession Booth
 						</a>
 					</div>
 				</div>
