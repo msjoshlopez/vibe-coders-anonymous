@@ -900,7 +900,7 @@
 			</div>
 
 			<p class="text-xs text-[#6e7681] max-w-md mx-auto">
-				This is a satirical website. AI coding tools are genuinely useful—just maybe understand what
+				This is a satirical website! AI coding tools are genuinely useful—just maybe understand what
 				they write sometimes.
 			</p>
 		</div>
