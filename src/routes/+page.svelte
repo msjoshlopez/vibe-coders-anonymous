@@ -312,7 +312,7 @@
 					>
 					<br />
 					<span class="bg-gradient-to-b from-[#c9d1d9] to-[#6e7681] bg-clip-text text-transparent"
-						>Anonymous</span
+						>Something</span
 					>
 				</h1>
 
