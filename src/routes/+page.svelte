@@ -312,7 +312,7 @@
 					>
 					<br />
 					<span class="bg-gradient-to-b from-[#c9d1d9] to-[#6e7681] bg-clip-text text-transparent"
-						>Something</span
+						>Anonymous</span
 					>
 				</h1>
 
@@ -358,11 +358,6 @@
 
 	<!-- The Problem - Terminal style -->
 	<section id="confession" class="py-32 px-6 bg-gradient-to-b from-[#0d1117] to-[#161b22]">
-		<img
-			src="https://placehold.co/600x400"
-			alt="Background"
-			class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
-		/>
 		<div
 			class="max-w-3xl mx-auto {visibleSections.has('confession')
 				? 'animate-fade-in-up'
@@ -380,6 +375,12 @@
 					<div class="w-3 h-3 rounded-full bg-[#27c93f] shadow-[0_0_8px_rgba(39,201,63,0.5)]"></div>
 					<span class="ml-3 text-xs text-[#8b949e] font-mono">~/recovery/confession.sh</span>
 				</div>
+
+				<img
+					src="https://placehold.co/600x400"
+					alt="Background"
+					class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+				/>
 				<!-- Terminal content -->
 				<div class="p-8 font-mono text-sm sm:text-base leading-loose">
 					<p class="text-[#7ee787]">$ cat my_story.txt</p>
